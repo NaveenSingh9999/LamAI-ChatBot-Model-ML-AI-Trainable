@@ -1,3 +1,5 @@
+# LamAI ChatBot Model (Machine Learning And Artificial Intelligence)
+guide/documentation ->
 ## Index
 1. [Features](#features)
 2. [Getting Started](#getting-started)
@@ -44,7 +46,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/LamAI.git
+    git clone https://github.com/NaveenSingh9999/LamAI.git
     ```
 2. Navigate to the project directory:
     ```bash
