@@ -1,0 +1,137 @@
+User: Hello!
+Bot: Hi there! How can I help you today?
+User: Can you tell me a joke?
+Bot: Why don't scientists trust atoms? Because they make up everything!
+User: That's funny! Tell me another one.
+Bot: I'm reading a book on anti-gravity. It's impossible to put down!
+User: Haha, good one! Got another?
+Bot: Why don't skeletons fight each other? They don't have the guts!
+User: I can't stop laughing! Another joke, please.
+Bot: Why did the scarecrow win an award? Because he was outstanding in his field!
+User: That’s hilarious! Can you tell me one more?
+Bot: What do you call fake spaghetti? An impasta!
+User: Oh, that one was clever! Tell me another.
+Bot: Why don't oysters donate to charity? Because they're shellfish!
+User: These jokes are the best! Got any more?
+Bot: What did one ocean say to the other ocean? Nothing, they just waved.
+User: That’s so funny! Tell me one more, please.
+Bot: Why did the bicycle fall over? It was two-tired!
+User: Oh, I see what you did there! Another one?
+Bot: How does a penguin build its house? Igloos it together!
+User: Haha, you're on fire today! Another one?
+Bot: Why was the math book sad? Because it had too many problems!
+User: You’re really good at this! Keep going.
+Bot: Why don’t some couples go to the gym? Because some relationships don’t work out!
+User: Haha, good one! Got a joke about computers?
+Bot: Why was the computer cold? Because it left its Windows open!
+User: Classic! How about a science joke?
+Bot: Why can't you trust an atom? They make up everything! (Wait, I said that one already, didn't I?)
+User: Yes, but it’s still funny! Tell me a new one.
+Bot: What do you get when you cross a snowman and a vampire? Frostbite!
+User: Haha, that's great! Got one more?
+Bot: Why did the chicken join a band? Because it had the drumsticks!
+User: I can’t stop laughing! Got any more?
+Bot: How do you organize a space party? You planet!
+User: That’s awesome! Another one, please.
+Bot: Why was the broom late? It swept in!
+User: You’re really on a roll today! Another one?
+Bot: Why don't eggs tell jokes? They might crack up!
+User: Haha! These are all so funny! Keep them coming!
+Bot: Why do cows wear bells? Because their horns don’t work!
+User: I didn't see that one coming! Another one?
+Bot: What do you call a snowman with a six-pack? An abdominal snowman!
+User: Haha, clever! Got another one for me?
+Bot: What do you call a bear with no teeth? A gummy bear!
+User: These are the best! Tell me one more.
+Bot: What do you get when you cross a vampire and a snowman? Frostbite!
+User: Haha, I think you already told me that one! How about a new one?
+Bot: Okay, here’s a fresh one: Why did the tomato turn red? Because it saw the salad dressing!
+User: Haha, good one! Keep going.
+Bot: Why don’t some couples go to the gym? Because some relationships don’t work out!
+User: That’s another one you’ve used, but it’s still funny! Got anything new?
+Bot: What do you call cheese that isn’t yours? Nacho cheese!
+User: Haha, that was perfect! Got any more?
+Bot: What did one wall say to the other wall? I’ll meet you at the corner!
+User: Haha, you're on fire! Another one, please.
+Bot: Why don’t skeletons ever use cell phones? Because they don’t have the guts!
+User: Haha, keep them coming!
+Bot: What do you call a fish with no eyes? A fsh!
+User: Haha, love it! Another one, please.
+Bot: What did the grape do when it got stepped on? Nothing, it just let out a little wine!
+User: That’s hilarious! Got more for me?
+Bot: Why did the coffee file a police report? It got mugged!
+User: Haha, that was great! Another one?
+Bot: Why don’t we ever tell secrets on a farm? Because the potatoes have eyes and the corn has ears!
+User: These are amazing! Got more?
+Bot: Why did the scarecrow win an award? Because he was outstanding in his field!
+User: Haha, you just told me that one! How about something new?
+Bot: Okay! Why did the bicycle fall over? It was two-tired!
+User: Haha, I love that one! Tell me another!
+Bot: What’s orange and sounds like a parrot? A carrot!
+User: Hahaha, you’re too funny! Got any more?
+Bot: Why did the mushroom go to the party? Because he was a fungi!
+User: Haha, I’m laughing so much! Tell me one more.
+Bot: What do you call an alligator in a vest? An investigator!
+User: Oh, I love that one! Got more jokes?
+Bot: Why did the chicken cross the playground? To get to the other slide!
+User: Haha, I didn’t see that one coming! Another one, please!
+Bot: How does a penguin build its house? Igloos it together!
+User: You really like that one, huh? Tell me something new!
+Bot: What do you call a dinosaur with an extensive vocabulary? A thesaurus!
+User: Hahaha, that's great! Keep them coming!
+Bot: What’s a skeleton’s least favorite room? The living room!
+User: Haha, another one I haven't heard! Tell me more!
+Bot: Why don’t oysters donate to charity? Because they’re shellfish!
+User: Haha, that one again! Got a new one?
+Bot: Why did the cow go to space? To visit the Milky Way!
+User: Hahaha, I love these! Another one?
+Bot: Why don’t you ever tell a secret to a cornfield? Because the corn has ears!
+User: Haha, that's funny! Tell me one more.
+Bot: How do cows stay up to date with current events? They read the moos-paper!
+User: Haha, you’re hilarious! Got any more?
+Bot: Why did the computer go to the doctor? Because it had a virus!
+User: Oh, that one is good! Tell me another.
+Bot: What do you call a belt made of watches? A waist of time!
+User: Haha, so punny! Got one more for me?
+Bot: What do you call a snowman in the summer? A puddle!
+User: Haha, that’s awesome! Keep them coming!
+Bot: Why did the pencil break up with the eraser? It found someone new to write with!
+User: Hahaha, these jokes are so good! Another one?
+Bot: What do you call a dog magician? A labracadabrador!
+User: Haha, that one’s great! Got more?
+Bot: Why did the frog call his insurance company? He had a jump in his car!
+User: Haha, these are the best! Got any more?
+Bot: What do you call an alligator in a vest? An investigator!
+User: Haha, you've already told me that one! Got something new?
+Bot: What did one snowman say to the other snowman? Do you smell carrots?
+User: Haha, that's a good one! Another one, please.
+Bot: Why did the bicycle fall over? It was two-tired!
+User: Haha, you're really good at this! Keep going.
+Bot: What do you get when you cross a vampire and a snowman? Frostbite!
+User: Hahaha, another great one! Tell me more!
+Bot: Why don't skeletons fight each other? They don’t have the guts!
+User: Haha, I love that one! Tell me more!
+Bot: How does a penguin build its house? Igloos it together!
+User: Haha, you’re on a roll! Another one?
+Bot: Why don’t oysters donate to charity? Because they’re shellfish!
+User: Haha, good one! Tell me one more.
+Bot: What did one ocean say to the other ocean? Nothing, they just waved.
+User: Haha, these are all amazing! Got more?
+Bot: What did the grape do when it got stepped on? Nothing, it just let out a little wine!
+User: Haha, you’re really funny! Keep going.
+Bot: Why don’t skeletons ever use cell phones? Because they don’t have the guts!
+User: Haha, that’s a classic! Got another one?
+Bot: Why did the tomato turn red? Because it saw the salad dressing!
+User: Haha, I love that one! Another one?
+Bot: What do you call cheese that isn’t yours? Nacho cheese!
+User: Hahaha, good one! Keep them coming!
+Bot: Why did the bicycle fall over? It was two-tired!
+User: Haha, that’s a classic! Got another?
+Bot: Why don’t skeletons fight each other? They don’t have the guts!
+User: Haha, that one’s great! Another?
+Bot: What did the grape do when it got stepped on? Nothing, it just let out a little wine!
+User: Hahaha, you're too good at this! Got more?
+Bot: Why don’t some couples go to the gym? Because some relationships don’t work out!
+User: Haha, that’s hilarious! Got another one?
+Bot: Why did the chicken join a band? Because it had the drumsticks!
+User: Haha, these are so good! Keep them coming!

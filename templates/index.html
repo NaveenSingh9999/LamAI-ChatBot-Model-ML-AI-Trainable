@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LamAI Web Chat</title>
+    <script>
+        async function sendMessage() {
+            let userQuery = document.getElementById("userQuery").value;
+            let responseBox = document.getElementById("response");
+
+            if (userQuery.trim() === "") {
+                responseBox.innerHTML = "Please enter a query.";
+                return;
+            }
+
+            let response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query: userQuery })
+            });
+
+            let result = await response.json();
+            responseBox.innerHTML = "LamAI: " + result.response;
+        }
+    </script>
+</head>
+<body>
+    <h1>LamAI Web Chat</h1>
+    <input type="text" id="userQuery" placeholder="Type your query..." />
+    <button onclick="sendMessage()">Send</button>
+    <p id="response"></p>
+</body>
+</html>
