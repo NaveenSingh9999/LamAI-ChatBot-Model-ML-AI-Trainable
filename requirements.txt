@@ -1,0 +1,10 @@
+numpy
+beautifulsoup4
+scikit-learn
+tensorflow
+spacy
+PyPDF2
+wikipedia-api
+requests
+flask
+flask-cors
