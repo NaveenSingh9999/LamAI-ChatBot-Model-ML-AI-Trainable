@@ -67,20 +67,13 @@ Before you begin, ensure you have met the following requirements:
 ### Training Process
 
 1. Preprocess the data:
-    ```python
-    python preprocess.py --data_dir ./data
-    ```
-2. Train the model:
-    ```python
-    python train.py --epochs 10 --batch_size 32 --learning_rate 0.001
-    ```
+   - Store/Plot All Your Datasets (txt,pdf,py,cpp) In ```Training_data``` Folder.
 
-### Evaluating the Model
-
-Evaluate the model's performance using the validation dataset:
-```python
-python evaluate.py --model_path ./models/lamai_model.pth
-```
+3. Train the model:
+   - Train And Start Your Model Using This Commamd.
+    ```python
+    python lamai.py
+    ```
 
 ## Usage
 
@@ -117,7 +110,7 @@ We welcome contributions from the community. To contribute:
 
 ## Contributors
 
-- **Lamgerr** - Initial work
+- **Lamgerr** - 100% Contributed
 
 ## Working of Neural Network
 
@@ -138,39 +131,6 @@ The `lamai.py` file contains several key functions:
 - `preprocess_input(self, input_text)`: Preprocesses the input text for the model.
 - `answer_question(self, question)`: Generates an answer to the given question.
 - `evaluate(self, validation_data)`: Evaluates the model's performance on validation data.
-
-## File Structure
-
-The project directory is organized as follows:
-
-```
-LamAI/
-├── data/
-│   ├── history/
-│   ├── geography/
-│   └── squad/
-├── models/
-│   └── lamai_model.pth
-├── src/
-│   ├── lamai.py
-│   ├── preprocess.py
-│   ├── train.py
-│   └── evaluate.py
-├── requirements.txt
-└── README.md
-```
-
-## Flow Chart
-
-Below is a flow chart illustrating the functions in `lamai.py`:
-
-```mermaid
-graph TD
-    A[__init__(self, model_path)] --> B[load_model(self)]
-    B --> C[preprocess_input(self, input_text)]
-    C --> D[answer_question(self, question)]
-    D --> E[evaluate(self, validation_data)]
-```
 
 ## License
 
