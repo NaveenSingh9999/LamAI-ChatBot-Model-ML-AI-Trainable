@@ -42,18 +42,30 @@ def setup_github_runner():
     run_command("mkdir -p /home/runner/actions-runner")
     run_command("chown -R runner:runner /home/runner/actions-runner")
     
-    # Download runner as runner user
-    commands = [
-        "cd /home/runner/actions-runner",
-        "curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz",
-        "tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz",
-        "rm actions-runner-linux-x64-2.311.0.tar.gz"
-    ]
+    # Download and extract in one command to ensure proper path
+    download_cmd = """
+    cd /home/runner/actions-runner && 
+    curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz && 
+    tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz && 
+    rm actions-runner-linux-x64-2.311.0.tar.gz &&
+    ls -la
+    """
     
-    for cmd in commands:
-        run_command(f"su - runner -c '{cmd}'")
+    result = run_command(f"su - runner -c '{download_cmd.strip()}'")
+    if result:
+        print("✅ GitHub Actions runner downloaded successfully!")
+    else:
+        print("❌ Failed to download GitHub Actions runner!")
+        return False
     
-    print("✅ GitHub Actions runner downloaded successfully!")
+    # Verify config.sh exists
+    verify_result = run_command("su - runner -c 'ls -la /home/runner/actions-runner/config.sh'", check=False)
+    if not verify_result:
+        print("❌ config.sh not found! Checking directory contents...")
+        run_command("su - runner -c 'ls -la /home/runner/actions-runner/'", check=False)
+        return False
+    
+    return True
 
 def configure_runner(token, repo_url):
     """Configure the GitHub Actions runner"""
@@ -105,7 +117,10 @@ def main():
     
     # Setup process
     setup_non_root_user()
-    setup_github_runner() 
+    
+    if not setup_github_runner():
+        print("\n❌ Setup failed during runner download!")
+        sys.exit(1)
     
     if configure_runner(token, repo_url):
         start_runner()
