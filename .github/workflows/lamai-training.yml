@@ -1,0 +1,101 @@
+name: LamAI Training Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      epochs:
+        description: 'Number of training epochs'
+        required: true
+        default: '5'
+        type: string
+      save_dir:
+        description: 'Directory to save training outputs'
+        required: true
+        default: 'outputs/'
+        type: string
+
+jobs:
+  train-lamai:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Verify GPU availability
+      run: |
+        python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"No GPU\"}')"
+    
+    - name: Run massive training
+      run: |
+        python massive_trainer.py --epochs ${{ github.event.inputs.epochs }} --save_dir ${{ github.event.inputs.save_dir }}
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+        TOKENIZERS_PARALLELISM: false
+    
+    - name: Check training outputs
+      run: |
+        ls -la ${{ github.event.inputs.save_dir }}
+        echo "Training completed successfully!"
+    
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: Commit and push training outputs
+      run: |
+        git add ${{ github.event.inputs.save_dir }}
+        git add vector_db/
+        git add *.json
+        git add *.faiss
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🚀 Training completed: epochs=${{ github.event.inputs.epochs }}, outputs saved to ${{ github.event.inputs.save_dir }}"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Create training summary
+      run: |
+        echo "## 🧠 LamAI Training Completed" >> $GITHUB_STEP_SUMMARY
+        echo "- **Epochs:** ${{ github.event.inputs.epochs }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Output Directory:** ${{ github.event.inputs.save_dir }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Timestamp:** $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **GPU Used:** $(python -c "import torch; print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')")" >> $GITHUB_STEP_SUMMARY
+        if [ -f "${{ github.event.inputs.save_dir }}/training_log.txt" ]; then
+          echo "- **Training Log:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          tail -20 "${{ github.event.inputs.save_dir }}/training_log.txt" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        fi
+    
+    - name: Stop self-hosted runner
+      if: always()
+      run: |
+        echo "Training pipeline completed. Shutting down runner..."
+        # Kill the runner process to stop the Colab session
+        sudo systemctl stop actions.runner.* || true
+        pkill -f "Runner.Listener" || true
